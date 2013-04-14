@@ -7,4 +7,5 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe "postgresql::libpq" # A debian or ubuntu requirement
 include_recipe "postgresql::server"
