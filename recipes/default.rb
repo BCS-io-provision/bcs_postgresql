@@ -9,3 +9,4 @@
 
 include_recipe "postgresql::libpq" # A debian or ubuntu requirement
 include_recipe "postgresql::server"
+include_recipe "postgresql::contrib"
