@@ -1,4 +1,4 @@
-name             "chef-postgresql-wrapper"
+name             "postgresql-wrapper"
 maintainer       "Richard Wigley"
 maintainer_email "richard.wigley"
 license          "MIT"

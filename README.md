@@ -7,7 +7,7 @@ This is a wrapper to give a company specific version for the [postgresql cookboo
 * Chef 11.0
 * Ruby >= 2.1.0
 * Ubuntu 12.04
-* [locale wrapper recipie has run](https://github.com/BCS-io/chef-locale-wrapper)
+* [None US collation requires the locale wrapper recipie to have run.](https://github.com/BCS-io/chef-locale-wrapper)
 * [phlipper postgresql cookbook](https://github.com/phlipper/chef-postgresql)
 
 ## Usage
@@ -33,9 +33,9 @@ Include in a runlist
 
 ## Attributes
 
-AUTHENTICATION
+### Authentication
 
-pg_hba
+#### pg_hba
 
 To control the security of Postgres means configuring pg_hba.
 
@@ -58,7 +58,7 @@ Do not include the default pg_hba if you are configuring your own pg_hba.
 default["postgresql"]["pg_hba_defaults"]                 = false
 ````
 
-Default Postgres User
+### Default Postgres User
 
 A typical customisation is to give the default Postgres superuser a password. You need postgres to authenticate the postgres user. You could do this by making this the first line in your pg_hba.
 
@@ -66,28 +66,17 @@ A typical customisation is to give the default Postgres superuser a password. Yo
 { type: "local", db: "all", user: "postgres",  addr: "", method: "md5"  },
 ````
 
-Then change the user postgres in the standard cookbook way. See the Users section of the readme and configure it was a username "postgres".
-https://github.com/phlipper/chef-postgresql/blob/master/README.md#usage
+Then change the user postgres in the standard cookbook way. [See the Users section of the readme and configure it was a username "postgres".](https://github.com/phlipper/chef-postgresql/blob/master/README.md#usage)
+
+### Locale
+
+[The default is to take the collation of the operating system.](http://www.postgresql.org/docs/9.3/static/locale.html) This can be overriden just for postgres, however, I prefer to have the system set the locale so that every application has the same localisation setting.
 
 
-LOCALE
+## Recipes
 
-The default customisation initialises the initdb with US settings. If that is not the case you need to configure this.
+The default runs the upstream `postgresql::libpq`, a Ubuntu requirement, `postgresql::server` the main database application, and the optional modules from `postgresql::contrib` - this is needed for array and hstore support.
 
-http://www.postgresql.org/docs/9.2/static/locale.html
-
-````
-# These settings are initialized by initdb, but they can be changed.
-default["postgresql"]["lc_messages"]                     = "en_GB.UTF-8"
-default["postgresql"]["lc_monetary"]                     = "en_GB.UTF-8"
-default["postgresql"]["lc_numeric"]                      = "en_GB.UTF-8"
-default["postgresql"]["lc_time"]                         = "en_GB.UTF-8"
-````
-
-# Recipes
-
-The default runs the upstream "postgresql::server"
-
-# Author
+## Author
 
 Author:: Richard Wigley (richard.wigley@bcs.io)

@@ -7,11 +7,4 @@ default["postgresql"]["pg_hba"]  = [
 ]
 
 default["postgresql"]["pg_hba_defaults"]                 = false
-
-# These settings are initialized by initdb, but they can be changed.
-default["postgresql"]["lc_messages"]                     = "en_GB.UTF-8"
-default["postgresql"]["lc_monetary"]                     = "en_GB.UTF-8"
-default["postgresql"]["lc_numeric"]                      = "en_GB.UTF-8"
-default["postgresql"]["lc_time"]                         = "en_GB.UTF-8"
-
 default["postgresql"]["listen_addresses"] =  "*"
