@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     }
     chef.data_bags_path = '.chef/data_bags'
     chef.run_list = [
-        "recipe[bcs_postgresql::default]"
+        "recipe[postgresql-wrapper::default]"
     ]
   end
 end

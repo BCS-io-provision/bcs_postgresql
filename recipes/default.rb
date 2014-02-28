@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: bcs_postgresql
+# Cookbook Name:: postgresql-wrapper
 # Recipe:: default
 #
 # Copyright (C) 2013 YOUR_NAME
