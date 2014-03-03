@@ -15,3 +15,5 @@ bin/*
 
 #chef
 .chef/
+.kitchen/
+.kitchen.local.yml
