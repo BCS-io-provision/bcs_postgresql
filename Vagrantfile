@@ -20,8 +20,8 @@ Vagrant.configure("2") do |config|
       }
     }
     chef.run_list = [
-        "recipe[apt::default]",
-        "recipe[postgresql-wrapper::default]"
+      "recipe[apt::default]",
+      "recipe[bcs_postgresql::default]"
     ]
   end
 end

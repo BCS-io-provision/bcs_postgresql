@@ -1,4 +1,4 @@
-## Postgresql-wrapper
+## bcs_postgresql
 
 This is a wrapper to give a company specific version for the [postgresql cookbook supported by phlipper.](https://github.com/phlipper/chef-postgresql)
 
@@ -18,9 +18,9 @@ Most commonly included into other cookbooks and add a dependency in the metadata
 | File        | Command                                                   |
 | ----------- | ----------------------------------------------------------|
 | berksfile   | cookbook 'postgresql', github: "phlipper/chef-postgresql"
-| berksfile   | cookbook 'postgresql-wrapper', github: "BCS-io/chef-postgresql-wrapper" |
+| berksfile   | cookbook 'bcs_postgresql', github: "BCS-io/chef-bcs_postgresql" |
 | metadata.rb | depends 'locale'                     |
-| recipe/     | include_recipe 'postgresql-wrapper'  |
+| recipe/     | include_recipe 'bcs_postgresql'  |
 
 Include in a runlist
 

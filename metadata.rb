@@ -1,4 +1,4 @@
-name             "postgresql-wrapper"
+name             "bcs_postgresql"
 maintainer       "Richard Wigley"
 maintainer_email "richard.wigley"
 license          "MIT"
