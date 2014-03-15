@@ -13,20 +13,24 @@ This is a wrapper to give a company specific version for the [postgresql cookboo
 ## Usage
 
 Most commonly included into other cookbooks and add a dependency in the metadata.
+bcs_sets the locale to GB. This requires that the server is also GB and that postgres collation is set to be GB as well. locale-wrapper, which sets locale to GB, should be in the runlist ahead of bcs_postgresql.
 
-
-| File        | Command                                                   |
-| ----------- | ----------------------------------------------------------|
-| berksfile   | cookbook 'postgresql', github: "phlipper/chef-postgresql"
+| File        | Command                                                         |
+| ----------- | ----------------------------------------------------------------|
+| berksfile   | cookbook 'postgresql', github: "phlipper/chef-postgresql"       |
 | berksfile   | cookbook 'bcs_postgresql', github: "BCS-io/chef-bcs_postgresql" |
-| metadata.rb | depends 'locale'                     |
-| recipe/     | include_recipe 'bcs_postgresql'  |
+| berksfile   | cookbook 'locale', github: "BCS-io/chef-locale"                 |
+| berksfile   | cookbook 'locale-wrapper', github: "BCS-io/chef-locale-wrapper" |
+| metadata.rb | depends 'locale'                                                |
+| recipe/     | include_recipe 'bcs_postgresql'                                 |
+
 
 Include in a runlist
 
 ````
     chef.run_list = [
-      "recipe[common-system::default]"
+      "recipe[locale-wrapper::default]",
+      "recipe[bcs_postgresql::default]"
   ]
 ````
 
