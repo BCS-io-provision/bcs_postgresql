@@ -2,7 +2,7 @@
 # Cookbook Name:: bcs_postgresql
 # Recipe:: default
 #
-# Copyright (C) 2013 YOUR_NAME
+# Copyright (C) 2013 RichardWigley
 #
 # All rights reserved - Do Not Redistribute
 #
