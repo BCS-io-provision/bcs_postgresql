@@ -10,5 +10,5 @@ supports 'ubuntu', '>= 12.04'
 
 depends 'apt'
 depends 'locale', '~> 1.0.0'
-depends 'locale-wrapper', '~> 1.0.0'
+depends 'bcs_locale', '~> 1.0.0'
 depends 'postgresql', '~> 0.13.3'

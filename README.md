@@ -7,20 +7,20 @@ This is a wrapper to give a company specific version for the [postgresql cookboo
 * Chef 11.0
 * Ruby >= 2.1.0
 * Ubuntu 12.04
-* [None US collation requires the locale wrapper recipie to have run.](https://github.com/BCS-io/chef-locale-wrapper)
+* [None US collation requires the locale wrapper, bcs_locale, recipie to have run.](https://github.com/BCS-io/bcs_locale)
 * [phlipper postgresql cookbook](https://github.com/phlipper/chef-postgresql)
 
 ## Usage
 
 Most commonly included into other cookbooks and add a dependency in the metadata.
-bcs_sets the locale to GB. This requires that the server is also GB and that postgres collation is set to be GB as well. locale-wrapper, which sets locale to GB, should be in the runlist ahead of bcs_postgresql.
+bcs_sets the locale to GB. This requires that the server is also GB and that postgres collation is set to be GB as well. bcs_locale, which sets locale to GB, should be in the runlist ahead of bcs_postgresql.
 
 | File        | Command                                                         |
 | ----------- | ----------------------------------------------------------------|
 | berksfile   | cookbook 'postgresql', github: "phlipper/chef-postgresql"       |
 | berksfile   | cookbook 'bcs_postgresql', github: "BCS-io/chef-bcs_postgresql" |
 | berksfile   | cookbook 'locale', github: "BCS-io/chef-locale"                 |
-| berksfile   | cookbook 'locale-wrapper', github: "BCS-io/chef-locale-wrapper" |
+| berksfile   | cookbook 'bcs_locale', github: "BCS-io/bcs_locale"              |
 | metadata.rb | depends 'locale'                                                |
 | recipe/     | include_recipe 'bcs_postgresql'                                 |
 
@@ -29,7 +29,7 @@ Include in a runlist
 
 ````
     chef.run_list = [
-      "recipe[locale-wrapper::default]",
+      "recipe[bcs_locale::default]",
       "recipe[bcs_postgresql::default]"
   ]
 ````
