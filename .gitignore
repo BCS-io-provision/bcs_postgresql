@@ -17,3 +17,6 @@ bin/*
 .chef/
 .kitchen/
 .kitchen.local.yml
+
+# gems into vendor
+vendor/*
