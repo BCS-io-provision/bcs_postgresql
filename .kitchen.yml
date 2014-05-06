@@ -1,3 +1,5 @@
+# To calculate yml to json
+# http://yaml-online-parser.appspot.com/
 ---
 driver:
   name: vagrant
@@ -17,3 +19,9 @@ suites:
     run_list:
       - recipe[bcs_postgresql::default]
     attributes:
+      postgresql:
+        users:
+          - username: richard
+            superuser: false
+            createdb: true
+            login: true
