@@ -5,7 +5,7 @@ This is a wrapper to give a company specific version for the [postgresql cookboo
 ## Requirements
 
 * Chef 11.0
-* Ruby >= 2.1.0
+* Ruby >= 2.2.0
 * Ubuntu 12.04
 * [None US collation requires the locale wrapper, bcs_locale, recipie to have run.](https://github.com/BCS-io/bcs_locale)
 * [phlipper postgresql cookbook](https://github.com/phlipper/chef-postgresql)
