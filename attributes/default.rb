@@ -1,5 +1,8 @@
-
-default['postgresql']['version'] = '9.4'
+#
+# wrapper for hw-cookbooks/postgresql
+#  - seems the most actively managed
+#  - versions of the database seem to be in keeping with the linux distribution's default
+#  - There are some pull requests in the offing but don't hold breath
 
 # Security Settings
 default['postgresql']['pg_hba_defaults'] = false
@@ -10,14 +13,7 @@ default['postgresql']['pg_hba'] = [
   { type: 'host',  db: 'all', user: 'all', addr: '83.67.10.5/32', method: 'trust' }
 ]
 
-# Readme says that this is enough to set locale.
-# However, I have found it needs lc_XX set.
-default['postgresql']['initdb_options']    = '--locale=en_GB.UTF-8'
-
-default['postgresql']['lc_messages']       = 'en_GB.UTF-8'
-default['postgresql']['lc_monetary']       = 'en_GB.UTF-8'
-default['postgresql']['lc_numeric']        = 'en_GB.UTF-8'
-default['postgresql']['lc_time']           = 'en_GB.UTF-8'
+default['postgresql']['password'] = {}
 
 # IP security setting
-default['postgresql']['listen_addresses'] = '*'
+default['postgresql']['config']['listen_addresses'] = '*'
