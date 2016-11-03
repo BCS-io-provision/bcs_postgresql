@@ -1,3 +1,6 @@
+
+default['postgresql']['version'] = '9.5'
+
 # Security Settings
 default['postgresql']['pg_hba_defaults'] = false
 default['postgresql']['pg_hba'] = [
