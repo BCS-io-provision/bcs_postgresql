@@ -1,5 +1,5 @@
 
-default['postgresql']['version'] = '9.5'
+default['postgresql']['version'] = '9.4'
 
 # Security Settings
 default['postgresql']['pg_hba_defaults'] = false
