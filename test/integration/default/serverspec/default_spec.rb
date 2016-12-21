@@ -1,9 +1,10 @@
 require 'serverspec'
-include Serverspec::Helper::Exec
-include Serverspec::Helper::DetectOS
+
+set :backend, :exec
 
 describe 'bcs_postgresql::default' do
-  it 'installed postgresql-9.3' do
-    expect(package 'postgresql-9.3').to be_installed
+  it 'installed postgresql' do
+    app_version =  os[:release] == '16.04' ? 'postgresql-9.5' : 'postgresql-9.3'
+    expect(package app_version).to be_installed
   end
 end

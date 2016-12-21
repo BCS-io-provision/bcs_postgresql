@@ -2,21 +2,21 @@
 # http://yaml-online-parser.appspot.com/
 ---
 driver:
+  # keeping vagrant as if anything faster than docker - 2.45 vs 3.10
   name: vagrant
-
 
 provisioner:
   name: chef_solo
 
 platforms:
   - name: ubuntu-14.04
-    run_list:
-      - recipe[apt::default]
-      - recipe[bcs_locale::default]
+  - name: ubuntu-16.04
 
 suites:
   - name: default
     run_list:
+      - recipe[apt::default]
+      - recipe[bcs_locale::default]
       - recipe[bcs_postgresql::default]
     attributes:
       postgresql:
@@ -25,3 +25,5 @@ suites:
             superuser: false
             createdb: true
             login: true
+        password:
+          postgres: 'secret'

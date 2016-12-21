@@ -1,14 +1,14 @@
 ## bcs_postgresql
 
-This is a wrapper to give a company specific version for the [postgresql cookbook supported by phlipper.](https://github.com/phlipper/chef-postgresql)
+This is a wrapper to give a company specific version for the [stock postgresql cookbook](https://github.com/sous-chefs/postgresql)
 
 ## Requirements
 
-* Chef 11.0
+* Chef 12.0
 * Ruby >= 2.2.0
-* Ubuntu 12.04
+* Ubuntu LTS 14.04+
 * [None US collation requires the locale wrapper, bcs_locale, recipie to have run.](https://github.com/BCS-io/bcs_locale)
-* [phlipper postgresql cookbook](https://github.com/phlipper/chef-postgresql)
+* [sous-chefs postgresql cookbook](https://github.com/sous-chefs/postgresql)
 
 ## Usage
 
@@ -17,8 +17,8 @@ bcs_sets the locale to GB. This requires that the server is also GB and that pos
 
 | File        | Command                                                         |
 | ----------- | ----------------------------------------------------------------|
-| berksfile   | cookbook 'postgresql', github: "phlipper/chef-postgresql"       |
-| berksfile   | cookbook 'bcs_postgresql', github: "BCS-io/chef-bcs_postgresql" |
+| berksfile   | cookbook 'postgresql', github: "sous-chefs/postgresql"       |
+| berksfile   | cookbook 'bcs_postgresql', github: "BCS-io-provision/bcs_postgresql" |
 | berksfile   | cookbook 'locale', github: "BCS-io/chef-locale"                 |
 | berksfile   | cookbook 'bcs_locale', github: "BCS-io/bcs_locale"              |
 | metadata.rb | depends 'locale'                                                |
@@ -36,6 +36,13 @@ Include in a runlist
 
 
 ## Attributes
+
+### Usage
+
+Password for the postgres user is automatically set if you're using chef server. For chef-solo you have to set this attribute.
+
+`node['postgresql']['password']['postgresql']`
+
 
 ### Authentication
 
@@ -70,7 +77,7 @@ A typical customisation is to give the default Postgres superuser a password. Yo
 { type: "local", db: "all", user: "postgres",  addr: "", method: "md5"  },
 ````
 
-Then change the user postgres in the standard cookbook way. [See the Users section of the readme and configure it was a username "postgres".](https://github.com/phlipper/chef-postgresql/blob/master/README.md#usage)
+Then change the user postgres in the standard cookbook way.
 
 ### Locale
 

@@ -1,8 +1,6 @@
 #
-# wrapper for hw-cookbooks/postgresql
-#  - seems the most actively managed
-#  - versions of the database seem to be in keeping with the linux distribution's default
-#  - There are some pull requests in the offing but don't hold breath
+# wrapper for sous-chefs/postgresql
+#  - currently actively managed - 2016/12/21
 
 # Security Settings
 default['postgresql']['pg_hba_defaults'] = false
@@ -13,7 +11,9 @@ default['postgresql']['pg_hba'] = [
   { type: 'host',  db: 'all', user: 'all', addr: '83.67.10.5/32', method: 'trust' }
 ]
 
-default['postgresql']['password'] = {}
+# chef-solo / chef-zero requires a password is set - chef-server sets password
+#
+default['postgresql']['password']['postgresql'] = ''
 
 # IP security setting
 default['postgresql']['config']['listen_addresses'] = '*'
