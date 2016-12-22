@@ -1,8 +1,13 @@
 AllCops:
-  Excludes:
+  Exclude:
     - vendor/**
 
 Encoding:
   Enabled: false
 LineLength:
   Enabled: false
+
+# Offense count: 1
+Lint/RescueException:
+  Exclude:
+    - 'Rakefile'
