@@ -12,4 +12,4 @@ issues_url       'https://github.com/BCS-io-provision/bcs_postgresql/issues' if 
 supports 'ubuntu', '>= 14.04'
 
 depends 'apt'
-depends 'postgresql', '~> 5.1.0'
+depends 'postgresql', '~> 5.2.0'
