@@ -14,4 +14,4 @@ chef_version     '>= 12.0' if respond_to?(:chef_version)
 supports         'ubuntu', '>= 14.04'
 
 depends          'apt'
-depends          'postgresql', '~> 5.2.0'
+depends          'postgresql', '~> 6.1.0'
