@@ -9,8 +9,9 @@ version          '2.2.1'
 source_url       'https://github.com/BCS-io-provision/bcs_postgresql' if respond_to?(:source_url)
 issues_url       'https://github.com/BCS-io-provision/bcs_postgresql/issues' if respond_to?(:issues_url)
 
-supports 'ubuntu', '>= 14.04'
+chef_version     '>= 12.0' if respond_to?(:chef_version)
 
-depends 'apt'
-depends 'postgresql', '~> 5.2.0'
-chef_version '>= 12.0' if respond_to?(:chef_version)
+supports         'ubuntu', '>= 14.04'
+
+depends          'apt'
+depends          'postgresql', '~> 5.2.0'
