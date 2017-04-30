@@ -4,9 +4,12 @@ This is a wrapper to give a company specific version for the [stock postgresql c
 
 ## Requirements
 
-* Chef 12.0
-* Ruby >= 2.2.0
-* Ubuntu LTS 14.04+
+| Requirement | Tested Version                                                  |
+| ----------- | ----------------------------------------------------------------|
+| Chef        | 12.5+                                                           |
+| Ruby        | 2.3.0+                                                          |
+| Ubuntu      | 14.04+                                                          |
+
 * [None US collation requires the locale wrapper, bcs_locale, recipie to have run.](https://github.com/BCS-io/bcs_locale)
 * [sous-chefs postgresql cookbook](https://github.com/sous-chefs/postgresql)
 
