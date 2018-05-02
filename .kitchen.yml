@@ -18,7 +18,6 @@ suites:
   - name: default
     run_list:
       - recipe[apt::default]
-      - recipe[bcs_locale::default]
       - recipe[bcs_postgresql::default]
     attributes:
       postgresql:
