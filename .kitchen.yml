@@ -7,7 +7,8 @@ driver:
 
 provisioner:
   name: chef_zero
-  require_chef_omnibus: 13
+  product_name: chef
+  product_version: latest # >= 14
   deprecations_as_errors: true
 
 platforms:
