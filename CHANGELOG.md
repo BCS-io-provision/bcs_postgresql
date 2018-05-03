@@ -2,7 +2,15 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [2.2.0] - 2016-13-31
+## [2.2.3] - 2018-13-31
+### Changed
+  - pinned sous-chef/postgresql to 6.1.1 - while they are making major changes to 
+    the cookbook as they move it from recipies to library
+  - updated Gems
+  - works on Ruby 2.5.1
+
+
+## [2.2.0] - 2017-04-24
 ### Changed
   - posgresql 5.1.0 => 5.2.0
 
