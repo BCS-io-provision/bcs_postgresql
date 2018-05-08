@@ -91,6 +91,15 @@ Then change the user postgres in the standard cookbook way.
 
 The default runs the upstream `postgresql::libpq`, a Ubuntu requirement, `postgresql::server` the main database application, and the optional modules from `postgresql::contrib` - this is needed for array and hstore support.
 
+### Testing
+
+To test postgresql instance out: 
+
+```
+sudo psql -U postgres
+```
+
+
 ## Author
 
 Author:: Richard Wigley (richard.wigley@bcs.io)
