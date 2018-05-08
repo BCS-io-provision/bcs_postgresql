@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 name             'bcs_postgresql'
 maintainer       'BCS Ltd'
 maintainer_email 'richard.wigley@github.com'

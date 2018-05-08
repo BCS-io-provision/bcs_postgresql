@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # wrapper for sous-chefs/postgresql
 #  - currently actively managed - 2016/12/21

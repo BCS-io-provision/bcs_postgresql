@@ -1,4 +1,5 @@
 # Encoding: utf-8
+# frozen_string_literal: true
 
 require 'timeout'
 require 'bundler/setup'
@@ -44,7 +45,7 @@ task :destroy do
 end
 
 # The default rake task should just run it all
-task default: %w(style integration)
+task default: %w[style integration]
 
 begin
   Timeout.timeout(15) do
@@ -52,7 +53,7 @@ begin
     Kitchen::RakeTasks.new
   end
 rescue Exception => e
-  raise e unless e.class.to_s =~ /^Timeout::|^Kitchen::|LoadError/
+  raise e unless e.class.to_s.match?(/^Timeout::|^Kitchen::|LoadError/)
 
   STDERR.puts "[!] Omitting Kitchen tasks [#{e.class}: #{e.message} at #{e.backtrace.first}]\n\n"
 end
