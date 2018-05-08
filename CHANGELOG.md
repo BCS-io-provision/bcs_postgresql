@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Master
+### Added
+  - Support for Ubuntu 18.04
+
 ## [2.2.3] - 2018-13-31
 ### Changed
   - pinned sous-chef/postgresql to 6.1.1 - while they are making major changes to 
