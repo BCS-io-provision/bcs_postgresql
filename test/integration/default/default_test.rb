@@ -32,3 +32,8 @@ elsif os[:release] == '16.04' || os[:release] == '18.04'
     it { should be_running }
   end
 end
+
+describe file("/etc/postgresql/#{app_version}/main/pg_hba.conf") do
+  it { should exist }
+  its('content') { should match('83.67.10.5/32') }
+end
