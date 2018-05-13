@@ -1,6 +1,9 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
+## Master
+### Changed
+  - serverspec to inspec
 
 ## [2.3.0] - 2018-05-08
 ### Added

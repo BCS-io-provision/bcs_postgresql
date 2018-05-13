@@ -5,6 +5,9 @@ driver:
   # keeping vagrant as if anything faster than docker - 2.45 vs 3.10
   name: vagrant
 
+verifier:
+  name: inspec
+
 provisioner:
   name: chef_zero
   product_name: chef
@@ -30,3 +33,7 @@ suites:
             login: true
         password:
           postgres: 'secret'
+    verifier:
+      inspec_tests:
+        - name: default
+          path: test/integration/default

@@ -1,0 +1,34 @@
+# # encoding: utf-8
+
+# Inspec test for recipe letting::default
+
+# The Inspec reference, with examples and extensive documentation, can be
+# found at http://inspec.io/docs/reference/resources/
+
+title 'bcs_postgresql::default'
+
+def app_version(os)
+  if os == '14.04'
+    '9.3'
+  elsif os == '16.04' || os == '18.04'
+    '9.5'
+  end
+end
+
+describe package("postgresql-#{app_version(os[:release])}") do
+  it { should be_installed }
+end
+
+if os[:release] == '14.04'
+  describe service('postgresql') do
+    it { should be_enabled  }
+    it { should be_installed  }
+    it { should be_running }
+  end
+elsif os[:release] == '16.04' || os[:release] == '18.04'
+  describe systemd_service('postgresql') do
+    it { should be_enabled }
+    it { should be_installed }
+    it { should be_running }
+  end
+end
