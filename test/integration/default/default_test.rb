@@ -7,15 +7,15 @@
 
 title 'bcs_postgresql::default'
 
-def app_version(os)
-  if os == '14.04'
+def app_version(release = os[:release])
+  if release == '14.04'
     '9.3'
-  elsif os == '16.04' || os == '18.04'
+  elsif release == '16.04' || release == '18.04'
     '9.5'
   end
 end
 
-describe package("postgresql-#{app_version(os[:release])}") do
+describe package("postgresql-#{app_version}") do
   it { should be_installed }
 end
 
