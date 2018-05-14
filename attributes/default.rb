@@ -8,6 +8,8 @@
 
 # Security Settings
 default['postgresql']['pg_hba_defaults'] = false
+
+# security applied when you try to make connection
 default['postgresql']['pg_hba'] = [
   { type: 'local', db: 'all', user: 'all', addr: '', method: 'trust' },
   { type: 'host',  db: 'all', user: 'all', addr: '127.0.0.1/32', method: 'trust' },
@@ -19,4 +21,5 @@ default['postgresql']['pg_hba'] = [
 default['postgresql']['password']['postgresql'] = ''
 
 # IP security setting
+#   - what ip addresses (interfaces really) will you listen on
 default['postgresql']['config']['listen_addresses'] = 'localhost'
