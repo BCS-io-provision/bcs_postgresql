@@ -1,0 +1,41 @@
+driver:
+  name: dokken
+  chef_version: 12.14.89
+  privileged: true # because Docker and SystemD/Upstart
+
+transport:
+  name: dokken
+
+provisioner:
+  name: dokken
+  deprecations_as_errors: true
+
+verifier:
+  name: inspec
+
+platforms:
+- name: ubuntu-16.04
+  driver:
+    image: dokken/ubuntu-16.04
+    pid_one_command: /bin/systemd
+    intermediate_instructions:
+      - RUN /usr/bin/apt-get update
+
+suites:
+  - name: default
+    run_list:
+      - recipe[apt::default]
+      - recipe[bcs_postgresql::default]
+    attributes:
+      postgresql:
+        users:
+          - username: richard
+            superuser: false
+            createdb: true
+            login: true
+        password:
+          postgres: 'secret'
+    verifier:
+      inspec_tests:
+        - name: default
+          path: test/integration/default

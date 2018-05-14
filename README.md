@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BCS-io-provision/bcs_postgresql.svg?branch=master)](https://travis-ci.org/BCS-io-provision/bcs_postgresql)
+
 ## bcs_postgresql
 
 This is a wrapper to give a company specific version for the [stock postgresql cookbook](https://github.com/sous-chefs/postgresql)
