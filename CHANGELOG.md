@@ -2,7 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ## Master
+
 ### Changed
+  - Prevent remote access
+    - Not sure whey we added it - prefer to break something and fix
+      than leave a large security question mark.
   - serverspec to inspec
 
 ## [2.3.0] - 2018-05-08
