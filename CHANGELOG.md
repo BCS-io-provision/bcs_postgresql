@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 ## Master
 
+## [2.4.0] - 2018-05-14
 ### Changed
   - Prevent remote access
     - Not sure whey we added it - prefer to break something and fix
