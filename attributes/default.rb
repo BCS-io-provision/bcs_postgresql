@@ -2,7 +2,9 @@
 
 #
 # wrapper for sous-chefs/postgresql
-#  - currently actively managed - 2016/12/21
+#   - pinned at 6.1.1 while the move to lwrp
+#   - we want to use a lwrp next as it is more precise than a general recipe
+#     - alternative to sous-chef is https://github.com/express42/postgresql_lwrp
 
 # Security Settings
 default['postgresql']['pg_hba_defaults'] = false
